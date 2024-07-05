@@ -1,0 +1,358 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>DIA-server</title> 
+<link rel="stylesheet" href="styles.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//192.168.1.85/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+</head>
+
+
+
+<body>
+
+
+
+      <script>
+      
+        function obtenerParametroURL(nombreParametro) {
+            var url = new URL(window.location.href);
+            return url.searchParams.get(nombreParametro);
+        }
+
+      
+        var resultado = obtenerParametroURL('resultado');
+	
+        
+
+      
+        if (resultado === "errpass") {
+      
+	      alert("Error registrando al usuario! Debe introducir sus datos correctamente. Revise la contraseña, correo electrónico , etc.");
+        
+	} else if (resultado === "erruser") {
+        
+	      alert("Error registrando al usuario! El usuario introducido ya está registrado.");
+        
+	} else if(resultado === "success"){
+         
+	     alert("Usuario registrado correctamente!");
+        
+	} else if(resultado === "errmail"){
+
+             alert("Error en el envío de correo: Inténtelo de nuevo, por favor. ");
+
+        } else if(resultado === "succmail"){
+		
+             alert("Email enviado correctamente! Le responderemos lo antes posible. ");
+
+        } else if(resultado === "errenter"){
+
+             alert("Inicio de sesión fallido: Inténtelo de nuevo, por favor.");
+
+        } else if(resultado === "recpass"){
+
+             alert("Por favor, revise su bandeja de entrada de correo y siga las instrucciones. Agradecemos su confianza en nosotros. Att, Diaserver.");
+
+        }
+
+
+      
+
+	    var sessionid = obtenerParametroURL('sid');
+	
+	    document.cookie = "sessionid=" + sessionid;
+
+
+
+
+    </script>
+
+
+
+    <header>
+        <div class="header" style="display: flex; justify-content: space-between; align-items: center; max-height: 60px; overflow: hidden;  margin: 0 auto;">
+
+	 <button onclick="mostrarContenido('start')" class="content" id="btnStart" style="margin-left: 10px; margin-right: 10px;">
+            <img src="assets/img/logo-removebg-preview (1).png" style="width: 100%; margin-right: 60px;"></img>
+         </button>
+
+	  
+	    <button onclick="mostrarContenido('inicio')" class="content" id="btnInicio" style="margin-left: 10px; margin-right: 10px;">DIA-server</button>
+            <button onclick="mostrarContenido('somos')" class="content" id="btnSomos" style="margin-left: 10px; margin-right: 10px;">Quienes Somos</button>
+            <button onclick="mostrarContenido('email')" class="content" id="btnEmail" style="margin-left: 10px; margin-right: 10px;">Envíanos un Email</button>
+            <button onclick="mostrarContenido('productos')" class="content" id="btnProductos" style="margin-left: 10px; margin-right: 10px;">Nuestros Productos</button>
+            <button onclick="mostrarContenido('entrar')" class="content" id="btnEntrar" style="margin-left: 10px; margin-right: 10px;">Entrar</button> 
+            <button onclick="mostrarContenido('registro')"  class="content" id="btnRegistro" style="margin-left: 10px; margin-right: 10px;">Registrarse</button>
+
+
+<script>
+		function ayuda() {
+		  alert("\nBienvenido a DIA-server\n\nSi ya esta registrado, acceda a 'Entrar', introduzca su nombre de usuario y la constraseña correpondiente, después pulse el boton.\n\nSi aun no se ha registrado pulse el botón 'Registrarse'.\n\nSi se ha olvidado de su contraseña pulse el botón '¿Has olvidado la contraseña?' en 'Entrar'\n\nPara cualquier otra duda no dude en contactar con nosotros, a través de 'Envíanos un email'");
+		}
+</script>
+
+	<button class="ayuda" onclick="ayuda()" style="margin-left: 10px; margin-right: 10px">¿Necesitas ayuda?</button>
+        </div>        
+
+ </header>
+
+
+ <div class="container" id="contenido-start">
+
+             
+ 
+
+        <div class="main-content">
+            
+                <div class="slideshow-container">
+
+                    
+                    <div class="mySlides fade">
+                    <img src="assets/img/home.jfif" style="width: 100%;">
+                        <div class="text">DIA-SERVER</div>
+                        <button class="btn-class-name" onclick="mostrarContenido('inicio')"> 
+                            <span>Empezar</span>
+                            <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                
+                    <div class="mySlides fade">
+                    <img src="assets/img/windows-nano-server-bg.jpg" style="width: 100%;">
+                    <div class="text">El servidor que ...</div>
+                    <button class="btn-class-name" onclick="mostrarContenido('inicio')"> 
+                        <span>Empezar</span>
+                        <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
+                        </svg>
+                    </button>
+                    </div>
+                
+                    <div class="mySlides fade">
+                    <img src="assets/img/OIP.jfif" style="width: 100%;">
+                    <div class="text">Simplificara tu vida</div>
+                    <button class="btn-class-name" onclick="mostrarContenido('inicio')"> 
+                        <span>Empezar</span>
+                        <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
+                        </svg>
+                    </button>
+                    </div>
+                
+                </div>
+                <br>
+
+       
+        </div>
+    </div>
+
+    <div class="container" id="contenido-inicio" style="display: none;">
+        <div class="main-content">
+            <br><br>
+            <h1>Servidor DIA</h1>
+            <br>
+            <p>Es un servidor LINUX diseñado para satisfacer las necesidades funcionales del Departamento de Informática y Automática. Este sistema proporciona servicios como correo electrónico, almacenamiento de páginas web y la instalación de una plataforma educativa, Moodle. Además, el sistema garantiza seguridad y rendimiento óptimo para todos los usuarios.</p>
+           
+            <br>
+            <img src="assets/img/logo.PNG" style="width: 30%;">
+	      
+
+        </div>
+    </div>
+
+    <div id="contenido-somos"  class="container"  style="display: none;">
+       
+
+
+        <div class="main-content">
+
+            <h1>Quiénes Somos</h1>
+    
+            <p>Bienvenido a DIA-server. Somos una empresa comprometida con la excelencia en la prestación de servicios de tecnología. Nuestro objetivo es proporcionar soluciones eficientes y seguras que satisfagan las necesidades de nuestros clientes.</p>
+            
+            <p>¡Gracias por elegir DIA-server! Esperamos poder servirte y ayudarte a alcanzar el éxito en tus proyectos tecnológicos.</p>
+            <br><br>
+            
+
+            <img src="assets/img/home.jfif" alt="Foto de inicio" width="400" height="300" >
+        </div>
+
+        </div>
+
+
+    </div>
+
+    <div id="contenido-email" class="container" style="display: none;">
+        
+        <div class="mail-content">
+            <h1>Envíanos un Email</h1>
+            <form id="email-form" action="/perl-bin/correo.pl" method="post">
+                
+                <input type="text" id="nombre" name="nombre" placeholder="&#xf007;  Nombre de usuario"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="email" id="correo" name="correo" placeholder="&#xf0e0; Correo electrónico"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="mensaje" name="mensaje" placeholder="&#xf075; Mensaje a enviar"
+                        style="font-family: FontAwesome, Calibri; font-style: normal" rows="5"><br>
+
+		
+        
+                <button type="submit">Enviar</button>
+            </form>
+
+            <br>
+          
+                    
+        </div>
+     </div>
+
+     <div id="contenido-productos" class="contenido-productos" style="display: none; position: relative;">
+        
+        
+
+  
+	  <br><br>
+
+          <div class="card" style="display: none; position:absolute; left: 10%;" id="card1"><h1>SERVIDOR DE CORREO</h1></div>
+          <div class="card" style="display: none; position:absolute; left: 42%;" id="card2"><h1>ALMACENAMIENTO</h1></div>
+          <div class="card" style="display: none; position:absolute; right: 10%;" id="card3"><h1>MONITOREO</h1></div> 
+    
+
+
+  
+
+    </div>
+
+
+   
+
+
+  <div id="contenido-entrar" class="container" style="display: none;">
+
+        <div class="mail-content">
+            <h1>Entre</h1>
+            <form id="enter-form" action="/perl-bin/login.pl" method="post">
+                <label for="username">Nombre de usuario:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Contraseña:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+    
+		
+         
+         
+                <button type="submit">Entrar</button> <br><br>
+
+                <button type="button" id="forgot-password">¿Has olvidado la contraseña?</button><br><br>
+
+              
+           </form>
+
+	 </div>
+
+
+
+
+
+  </div>
+
+<script>
+    // Obtener el texto "¿Has olvidado la contraseña?"
+    var forgotPasswordText = document.getElementById("forgot-password");
+
+    // Agregar un evento de clic al texto
+    forgotPasswordText.addEventListener("click", function() {
+        // Redirigir a la página rem_pass.pl
+        window.location.href = "/forgotten_pass.html";
+    });
+</script>
+
+
+
+    <div id="contenido-registro" class="container" style="display: none; top: 0%;">
+        <div class="mail-content">
+            <h1>Regístrese</h1>
+            <form id="email-form" action="/perl-bin/registro.pl" method="post">
+               
+                <input type="text" id="username1" name="username1" placeholder="&#xf007;  Nombre de usuario"
+			style="font-family: FontAwesome, Calibri; font-style: normal"><br>    
+
+                <input type="password" id="password" name="password" placeholder="&#xf187;  Contraseña"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="password" id="password2" name="password2" placeholder="&#xf187; Repita la contraseña"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="name" name="name" placeholder="&#xf0c0; Nombre del usuario"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="surname" name="surname" placeholder="&#xf0c0; Apellidos del usuario"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="email" id="email" name="email" placeholder="&#xf0e0; Correo electrónico"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="address" name="address" placeholder="&#xf041; Dirección postal"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="mobilephone" name="mobilephone" placeholder="&#xf095; Número de teléfono"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+
+	       <label for="role">¿Qué es usted?:</label><br>
+
+			    <select id="role" name="role">
+			        <option value="Alumno">Alumno</option>
+			        <option value="Profesor">Profesor</option>
+			    </select><br>               
+		  
+	      
+		   <label for="admin">¿Es usted un administrador?</label><br>
+		    <input type="checkbox" id="admin" name="admin">
+		    <br>	       
+
+               
+		<label>¿Ha perdido la contraseña?</label><br><br>
+                <button type="submit">Registrarse</button>
+
+
+            </form>    
+        </div>
+    </div>
+
+
+       
+    
+    <footer style="display: none;" id="pie">
+        <div class="footer" >
+            <p>Copyright &copy; 2024 - Derechos Reservados por Marcosky</p>
+        </div>
+    </footer>
+
+
+ <script src="main.js"></script> 
+   
+</body>
+</html>

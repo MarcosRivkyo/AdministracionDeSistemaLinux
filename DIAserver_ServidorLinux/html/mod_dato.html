@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modificar Datos</title>
+<!--<link rel="stylesheet" href="styles.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .mail-content {
+        text-align: center;
+               background-color: #57E17F;
+
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+	width: 400px;
+
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #217dbb;
+    }
+
+
+.return-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: #2ecc71;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+
+
+
+</style>
+
+   <script>
+        function getNextPageLink(value) {
+            var urlParams = new URLSearchParams(window.location.search);         
+            var sessionId = urlParams.get('session_id');
+
+            var nextPageLink = "/ajustes.html?session_id=" + sessionId;
+
+
+
+            return nextPageLink;
+        }
+       
+    </script>
+
+
+<body>
+        <div class="mail-content">
+            <h1>Modificar Datos Personales</h1>
+            <form id="email-form" action="/perl-bin/mod_dato.pl" method="post">
+
+                <input type="email" id="email" name="email" placeholder="&#xf187;  Email"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="nombre" name="nombre" placeholder="&#xf187;  Nombre"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="apellido" name="apellido" placeholder="&#xf187;  Apellidos"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="text" id="address" name="address" placeholder="&#xf187; Direccion Postal"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+		<input type="text" id="phone" name="phone" placeholder="&#xf187; Telefono"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+
+            	<br><br>
+                <button type="submit">Modificar</button>
+
+
+            </form>
+        </div>
+
+
+    <button class="return-button" onclick="location.href = getNextPageLink();">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+
+
+</body>
+</html>
+
+

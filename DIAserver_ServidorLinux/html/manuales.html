@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manuales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px;
+        }
+        .manual {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .pdf-icon {
+            font-size: 80px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .pdf-icon:hover {
+            color: #0056b3;
+        }
+        .manual-text {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    button:hover {
+        background-color: #217dbb;
+    }
+
+
+
+
+    </style>
+
+   <script>
+        function getNextPageLink(value) {
+            var urlParams = new URLSearchParams(window.location.search);            
+            var sessionId = urlParams.get('session_id');
+
+            var nextPageLink = "ajustes.html?session_id=" + sessionId;
+
+
+
+            return nextPageLink;
+        }
+        
+    </script>
+
+
+</head>
+<body>
+    <div class="container">
+
+      
+        <div class="manual">
+            <a href="assets/man/Ayuda_DIAserver.pdf" download="ManualDIAserver">
+                <i class="fas fa-file-pdf pdf-icon" style="color: #1B9500;"></i>
+            </a>
+            <div class="manual-text">Ayuda de uso</div>
+        </div>
+        <div class="manual">
+            <a href="assets/man/ASISTENCIA_DIAserver.pdf" download="AsistenciaTecnica">
+                <i class="far fa-file-pdf pdf-icon" style="color: #1B9500;"></i>
+            </a>
+            <div class="manual-text">Asistencia técnica</div>
+        </div>
+        <div class="manual">
+            <a href="assets/man/PF2023_24.pdf" download="EnunciadoPractica">
+                <i class="fas fa-download pdf-icon" style="color: #1B9500;"></i>
+            </a>
+            <div class="manual-text">Enunciado Práctica</div>
+        </div>
+        <div class="manual">
+            <a href="assets/man/MEMORIA_DIAserver.pdf" download="MemoriaDIAserver">
+                <i class="fas fa-book pdf-icon" style="color: #1B9500;"></i>
+            </a>
+            <div class="manual-text">Memoria Práctica</div>
+        </div>
+    </div>
+
+ 
+
+</body>
+</html>

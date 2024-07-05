@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajustes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #FFFFFF;
+        position: relative;
+    }
+
+    .container {
+        width: 800px;
+        height: 600px;
+        background-color: #C6E4C4;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    .buttons-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    button {
+        height: 100px;
+        width: 200px;
+        background-color: #2ecc71;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        padding: 15px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 5px;
+    }
+
+    button:hover {
+        background-color: #27ae60;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+   
+</style>
+   <script>
+
+
+ 
+
+        function getNextPageLink(value) {
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var sessionId = urlParams.get('session_id');
+            var nextPageLink = "";
+
+       
+
+
+		if(value == 1){
+		        nextPageLink = "/mod_passw.html?session_id=" + sessionId;		       
+		}else if(value == 2){
+		        var nextPageLink = "/mod_dato.html?session_id=" + sessionId;		     
+                }else if(value == 3){
+		        var nextPageLink = "/baja_usuario.html?session_id=" + sessionId;                   
+                }else if(value == 4){
+		        var nextPageLink = "/manuales.html?session_id=" + sessionId;                    
+                }else if(value == 5){
+		       var nextPageLink = "/alumno.html?rol=session_id=" + sessionId;                     
+                }
+
+            return nextPageLink;
+
+        }
+ 
+  
+        function checkForError() {
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                alert('ERROR: Ha rellenado mal el formulario.');
+            }
+        }
+
+        window.onload = checkForError;
+
+
+   </script>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//192.168.1.85/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="title">Ajustes</div>
+        <div class="buttons-grid">
+            <button onclick="location.href =  getNextPageLink(1);";>Cambiar Contraseña</button>
+            <button onclick="location.href =  getNextPageLink(2);">Cambiar Datos Personales</button>
+            <button onclick="location.href = '/perl-bin/crear_blog.pl'">Crear Blog</button>
+            <button onclick="location.href = '/perl-bin/eliminar_blog.pl'">Eliminar Blog</button>
+            <button onclick="location.href =  getNextPageLink(3);">Dar de baja del sistema</button>
+            <button onclick="location.href =  getNextPageLink(4);">Manuales de Uso</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>

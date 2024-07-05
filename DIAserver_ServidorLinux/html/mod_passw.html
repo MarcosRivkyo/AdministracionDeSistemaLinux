@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modificar Contraseña</title>
+<!--<link rel="stylesheet" href="styles.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .mail-content {
+        text-align: center;
+               background-color: #57E17F;
+
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+	width: 400px;
+
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #217dbb;
+    }
+
+
+
+
+</style>
+
+   <script>
+        function getNextPageLink(value) {
+            var urlParams = new URLSearchParams(window.location.search);         
+            var sessionId = urlParams.get('session_id');
+
+	    var nextPageLink = "/ajustes.html?session_id=" + sessionId;
+           
+
+
+            return nextPageLink;
+        }
+    </script>
+
+    
+
+<body>
+    
+
+    <script>
+       
+            alert("Tenga cuidado ¡Esta operacion es irreversible!");
+       
+    </script>
+
+
+   
+    <div class="mail-content">
+            <h1>Modificar Contraseña</h1>
+           
+ 
+
+        <form id="email-form" action="/perl-bin/mod_passw.pl" method="post">
+	      
+
+	       
+
+                <input type="password" id="oldPassword" name="oldPassword" placeholder="&#xf187;  Contraseña Actual"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="password" id="newPassword1" name="newPassword1" placeholder="&#xf187;  Contraseña Nueva"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+                <input type="password" id="newPassword2" name="newPassword2" placeholder="&#xf187; Repita la Contraseña Nueva"
+                        style="font-family: FontAwesome, Calibri; font-style: normal"><br>
+
+	         
+
+            	<br><br>
+                <button type="submit">Modificar</button>
+
+
+            </form>
+        </div>
+
+   
+
+ 
+
+</body>
+</html>
+
+
